@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WorldService Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Arial;
+margin:0;
+padding:0;
+color:white;
+}
+
+.header{
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+padding:25px;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+box-shadow:0 0 20px black;
+}
+
+.sub{
+text-align:center;
+padding:10px;
+color:#cbd5e1;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+margin-top:20px;
+border-radius:20px;
+box-shadow:0 0 15px black;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.02);
+}
+
+.price{
+color:#4ade80;
+font-size:24px;
+margin-top:10px;
+}
+
+.fast{
+color:yellow;
+font-weight:bold;
+}
+
+input,select{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+border-radius:12px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:16px;
+margin-top:20px;
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+border:none;
+border-radius:15px;
+font-size:20px;
+color:white;
+font-weight:bold;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px 20px;
+border-radius:50px;
+font-size:20px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+box-shadow:0 0 20px black;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+WorldService Premium
+</div>
+
+<div class="sub">
+Professional Digital Services Platform
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Website Development</h2>
+<p>Business websites ecommerce admin systems</p>
+<div class="price">$120 - $500</div>
+</div>
+
+<div class="card">
+<h2>Android App Development</h2>
+<p>Professional mobile applications</p>
+<div class="price">$180 - $800</div>
+</div>
+
+<div class="card">
+<h2>Graphic Designing</h2>
+<p>Logo banners social media kits</p>
+<div class="price">$60 - $250</div>
+</div>
+
+<div class="card">
+<h2>Video Editing</h2>
+<p>Cinematic reels ads editing</p>
+<div class="price">$90 - $400</div>
+</div>
+
+<div class="card">
+<h2>Social Media Management</h2>
+<p>Instagram Facebook TikTok branding</p>
+<div class="price">$70 - $300</div>
+</div>
+
+<div class="card">
+<h2>SEO Services</h2>
+<p>Google ranking optimization</p>
+<div class="price">$150 - $700</div>
+</div>
+
+<div class="card">
+<h2>UI UX Designing</h2>
+<p>Professional app and website designs</p>
+<div class="price">$100 - $450</div>
+</div>
+
+<div class="card">
+<h2>Content Writing</h2>
+<p>Blogs articles professional writing</p>
+<div class="price">$40 - $200</div>
+</div>
+
+<div class="card">
+<h2>Fast Delivery Option</h2>
+<p class="fast">7 Days Fast Delivery Available</p>
+<div class="price">Extra +$70</div>
+</div>
+
+<div class="card">
+
+<h2>Place Your Order</h2>
+
+<form action="/order" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="text" name="whatsapp" placeholder="WhatsApp Number" required>
+
+<select name="service">
+
+<option>Website Development</option>
+<option>Android App Development</option>
+<option>Graphic Designing</option>
+<option>Video Editing</option>
+<option>Social Media Management</option>
+<option>SEO Services</option>
+<option>UI UX Designing</option>
+<option>Content Writing</option>
+
+</select>
+
+<select name="delivery">
+
+<option>Normal Delivery</option>
+<option>Fast 7 Days Delivery (+$70)</option>
+
+</select>
+
+<button type="submit">
+Place Order
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/923000000000">
+WhatsApp
+</a>
+
+<div class="footer">
+© WorldService Premium 2026
+</div>
+
+</body>
+</html>
