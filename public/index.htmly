@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WorldService</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="main">
+
+  <h1 class="logo">WORLD SERVICE</h1>
+
+  <form class="service-form">
+
+    <div class="box">
+      <label>Select Service</label>
+
+      <select>
+
+        <option>Instagram Recovery</option>
+        <option>Facebook Help</option>
+        <option>TikTok Service</option>
+        <option>YouTube Service</option>
+        <option>Gaming Support</option>
+        <option>Graphic Designing</option>
+        <option>Video Editing</option>
+        <option>Website Design</option>
+        <option>Logo Design</option>
+        <option>Social Media Boost</option>
+        <option>WhatsApp Support</option>
+        <option>Cyber Security</option>
+        <option>Bug Fixing</option>
+        <option>Cloud Hosting</option>
+        <option>SEO Service</option>
+        <option>App Development</option>
+        <option>Premium Editing</option>
+        <option>Thumbnail Design</option>
+        <option>AI Service</option>
+        <option>Technical Support</option>
+        <option>Business Setup</option>
+
+      </select>
+    </div>
+
+    <div class="box">
+      <label>Your Name</label>
+      <input type="text" placeholder="Enter Your Name">
+    </div>
+
+    <div class="box">
+      <label>Phone Number</label>
+      <input type="text" placeholder="03XXXXXXXXX">
+    </div>
+
+    <div class="box">
+      <label>Description</label>
+      <textarea placeholder="Write Here"></textarea>
+    </div>
+
+    <button class="btn">SUBMIT</button>
+
+  </form>
+
+</div>
+
+</body>
+</html>
+

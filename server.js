@@ -1,123 +1,116 @@
 const express = require("express");
-const fs = require("fs");
+const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static("public"));
 
-// HOME PAGE
+let orders = [];
+
+/* HOME PAGE */
 app.get("/", (req, res) => {
-res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// SAVE ORDER
+/* SAVE ORDER */
 app.post("/order", (req, res) => {
 
-const data = `
+  const newOrder = {
+    fullname: req.body.fullname,
+    mobile: req.body.mobile,
+    whatsapp: req.body.whatsapp,
+    email: req.body.email,
+    service: req.body.service,
+    delivery: req.body.delivery,
+    payment: req.body.payment,
+    description: req.body.description
+  };
 
-========================
+  orders.push(newOrder);
 
-Full Name: ${req.body.name}
-
-Mobile: ${req.body.mobile}
-
-WhatsApp: ${req.body.whatsapp}
-
-Email: ${req.body.email}
-
-Country: ${req.body.country}
-
-Service: ${req.body.service}
-
-Delivery: ${req.body.delivery}
-
-Price: ${req.body.price}
-
-Payment Method: ${req.body.payment}
-
-Details:
-${req.body.details}
-
-========================
-
-`;
-
-fs.appendFileSync("orders.txt", data);
-
-res.send(`
-
-<html><head><title>Order Success</title><style>
-
-body{
-background:#0f172a;
-font-family:Arial;
-text-align:center;
-padding-top:100px;
-color:white;
-}
-
-h1{
-color:#22c55e;
-font-size:40px;
-}
-
-p{
-font-size:20px;
-}
-
-</style></head><body><h1>✔️ Order Submitted Successfully</h1><p>WorldService Team Will Contact You Soon.</p></body></html>`);
+  res.send("Order Submitted Successfully");
 
 });
 
-// ADMIN PANEL
+/* ADMIN PANEL */
 app.get("/admin", (req, res) => {
 
-const password = req.query.pass;
+  let html = `
+  <html>
+  <head>
+  <title>Admin Panel</title>
 
-if(password !== "world123"){
+  <style>
 
-return res.send("<h1 style='color:red;text-align:center;margin-top:100px;'>Access Denied ❌</h1>");
+  body{
+    background:#0f172a;
+    color:white;
+    font-family:sans-serif;
+    padding:20px;
+  }
 
-}
+  .card{
+    background:#1e293b;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+  }
 
-let data = "No Orders Yet";
+  h1{
+    color:#00e5ff;
+  }
 
-if(fs.existsSync("orders.txt")){
+  </style>
 
-data = fs.readFileSync("orders.txt","utf8");
+  </head>
+  <body>
 
-}
+  <h1>WorldService Admin Panel</h1>
+  `;
 
-res.send(`
+  orders.forEach((order, index) => {
 
-<html><head><title>WorldService Admin</title><style>
+    html += `
 
-body{
-background:#111827;
-color:white;
-font-family:Arial;
-padding:20px;
-}
+    <div class="card">
 
-h1{
-color:#22c55e;
-}
+    <h2>Order ${index + 1}</h2>
 
-pre{
-background:#1f2937;
-padding:20px;
-border-radius:10px;
-white-space:pre-wrap;
-}
+    <p><b>Full Name:</b> ${order.fullname}</p>
 
-</style></head><body><h1>🔐 WorldService Admin Panel</h1><pre>${data}</pre></body></html>`);
+    <p><b>Mobile:</b> ${order.mobile}</p>
+
+    <p><b>WhatsApp:</b> ${order.whatsapp}</p>
+
+    <p><b>Email:</b> ${order.email}</p>
+
+    <p><b>Service:</b> ${order.service}</p>
+
+    <p><b>Delivery:</b> ${order.delivery}</p>
+
+    <p><b>Payment:</b> ${order.payment}</p>
+
+    <p><b>Description:</b> ${order.description}</p>
+
+    </div>
+
+    `;
+  });
+
+  html += `
+  </body>
+  </html>
+  `;
+
+  res.send(html);
 
 });
 
-// SERVER
+/* START SERVER */
 app.listen(3000, () => {
-
-console.log("WorldService Running On Port 3000");
-
+  console.log("WorldService Running");
 });

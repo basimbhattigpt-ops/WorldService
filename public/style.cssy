@@ -1,0 +1,80 @@
+body{
+  margin:0;
+.whatsapp-btn img{
+width:32px;
+height:32px;
+}9
+  padding:0;
+  font-family:sans-serif;
+  background:#050816;
+  color:white;
+}
+
+.main{
+  width:90%;
+  max-width:500px;
+  margin:auto;
+  padding-top:40px;
+}
+
+.logo{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+  color:#00e5ff;
+  text-shadow:0 0 20px #00e5ff;
+}
+
+.service-form{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  border-radius:25px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 0 40px rgba(0,229,255,0.2);
+}
+
+.box{
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  margin-bottom:10px;
+  font-size:15px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:14px;
+  border:none;
+  outline:none;
+  border-radius:15px;
+  background:#0f172a;
+  color:white;
+  font-size:15px;
+}
+
+textarea{
+  height:120px;
+}
+
+.btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:20px;
+  background:#00e5ff;
+  color:black;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px #00e5ff;
+}
